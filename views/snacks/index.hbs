@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <h1>Snacks Index Page</h1>
+  <br>
+  <a href="http://localhost:3000/snacks/new" class="all-snacks">Add New Snack</a><br>
+  {{#each snacks}}
+  <div class="row">
+    <div class="col-md-2">
+      <img src="{{ this.image_url }}"
+        alt="{{ this.name }}"
+        class="snack-image">
+    </div>
+    <div class="col-md-6">
+      <a href="http://localhost:3000/snacks/{{ this.id }}">{{ this.name }}</a>
+      <p>
+      Review: {{ this.review_description }}<br>
+      Rating: {{ this.rating }}
+      <span>
+        <form action="/snacks/{{ this.id }}?_method=DELETE" method="POST">
+        <input class="btn btn-sm btn-danger"
+            type="submit"
+            name="delete"
+            value="Delete Snack">
+        </form>
+      </span>
+      </p>
+    </div>
+  </div>
+  {{/each}}
+</div>

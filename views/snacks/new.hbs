@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <h1>Add New Snack</h1>
+    <a href="http://localhost:3000/snacks/" class="all-snacks">Return to All Snacks</a>
+    <br><br>
+
+    <form method="POST" action="/snacks" class="well">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="title">Snack Name</label>
+                    <input id="name" name="name" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="item">Review</label>
+                    <input id="review_description" name="review_description" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="item">Rating</label>
+                    <input id="rating" name="rating" type="text" min="0" max="5" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="image">Snack Image URL</label>
+                    <input id="image_url" name="image_url" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
