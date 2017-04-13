@@ -26,8 +26,8 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   var name = req.body.name;
-  var review = req.body.review_description;
-  var rating = parseInt(req.body.rating);
+  // var review = req.body.review_description;
+  // var rating = parseInt(req.body.rating);
   var snack = {
     name: req.body.name,
     review_description: req.body.review_description,
@@ -60,9 +60,9 @@ router.delete('/:id', (req, res, next) => {
 });
 
 // The put route is being used to update the selected id
-router.put('/:snackId', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   //req is the req, params is an object with a key/value pair for the route/id
-  var id = req.params.snackId
+  var id = req.params.id
   console.log(req.params);
   // body is object containing all of parameters from the parsed request body in key value/pairs
   var name = req.body.name
