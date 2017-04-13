@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h1>Snacks Index Page</h1>
   <br>
-  <a href="http://localhost:3000/snacks/new" class="all-snacks">Add New Noms!</a><br>
+  <a href="/snacks/new" class="all-snacks">Add New Noms!</a><br>
   {{#each snacks}}
   <div class="row">
     <div class="col-md-2">
@@ -10,7 +10,7 @@
         class="snack-image">
     </div>
     <div class="col-md-6">
-      <a href="http://localhost:3000/snacks/{{ this.id }}">{{ this.name }}</a>
+      <a href="/snacks/{{ this.id }}">{{ this.name }}</a>
       <p>
       Review: {{ this.review_description }}<br>
       Rating: {{ this.rating }}<br>
