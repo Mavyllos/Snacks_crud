@@ -26,8 +26,8 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   var name = req.body.name;
-  // var review = req.body.review_description;
-  // var rating = parseInt(req.body.rating);
+  var review = req.body.review_description;
+  var rating = parseInt(req.body.rating);
   var snack = {
     name: req.body.name,
     review_description: req.body.review_description,
@@ -41,8 +41,7 @@ router.post('/', (req, res, next) => {
   // res.render('snacks/new', { error: 'Review is blank', snack })
   // }
   // if (!rating) {
-  // res.render('snacks/new', { error: 'RAting is blank', snack })
-  // }
+  // res.render('snacks/new', { error: 'Rating is blank', snack })
   else {
     db('snacks').insert(snack, '*').then(newSnack => {
       var id = newSnack[0].id;
@@ -60,8 +59,11 @@ router.delete('/:id', (req, res, next) => {
   })
 });
 
+// The put route is being used to update the selected id
 router.put('/:id', (req, res, next) => {
+  //req is the req, params indicates a search of the url path, query string, and body of the request for the specified parameter
   var id = req.params.id
+  // body is object containing parameters from the parsed request body
   var name = req.body.name
   var snack = {
     name: req.body.name,
@@ -69,9 +71,13 @@ router.put('/:id', (req, res, next) => {
     rating: req.body.rating,
     image_url: req.body.image_url
   }
+  // an if/else statement looking for form validation
   if (!name) {
-  res.render('snacks/new', { error: 'Name is blank', snack })
+    // this triggers a render (rather than a redirect) with an errror message if the condition above was true
+  res.render('snacks/edit', { error: 'Name is blank', snack })
+  // this code runs if the above condition was false
   } else {
+    // this triggers a redirect back to the  id (string interpolation) with the changes that were made to the updatedSnacks var
     db('snacks').update(snack, '*').where({ id }).then(updatedSnack => {
       var id = updatedSnack[0].id;
       res.redirect(`/snacks/${id}/`)
