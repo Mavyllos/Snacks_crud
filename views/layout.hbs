@@ -7,38 +7,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script defer src="/javascripts/ui_design.js"></script>
+    <script defer src="./javascripts/ui_design.js"></script>
 </head>
 
 <body>
-    <header>
-      <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-            <a class="navbar-brand" href="http://localhost:3000">Snack Time!</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="http://localhost:3000/snacks">Snacks</a></li>
-                <li><a href="http://localhost:3000/snacks/new">Add New Snack</a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
-    </header>
-    <main>
-
-        {{{body}}}
-    </main>
+  {{> nav}}
+  {{{body}}}
 </body>
 
 </html>

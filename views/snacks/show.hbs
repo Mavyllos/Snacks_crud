@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <a href="http://localhost:3000/snacks/" class="all-snacks">Return to All Snacks</a><br>
-      <a href="http://localhost:3000/snacks/new" class="all-snacks">Add New Snack</a><br>
+      <a href="http://localhost:3000/snacks/new" class="all-snacks">Add New Noms!</a><br>
   <div class="row">
     <div class="col-md-2">
       <img src="{{ snack.image_url }}"
@@ -10,16 +10,22 @@
     <div class="col-md-6">
       <h2>{{ snack.name }}</h2>
       <p>
-      Review:: {{ snack.review_description }}<br>
+      Review: {{ snack.review_description }}<br>
       Rating: {{ snack.rating }}
       <span>
-  <form action="/snacks/{{ snack.id }}?_method=DELETE" method="POST">
-  <input class="btn btn-sm btn-danger"
-      type="submit"
-      name="delete"
-      value="Delete Snack">
-  </form>
-</span>
+        <form action="/snacks/{{ snack.id }}/edit">
+          <input class="btn btn-sm btn-success"
+          type="submit"
+          name="edit-button"
+          value="Edit Snack">
+        </form>
+        <form action="/snacks/{{ snack.id }}?_method=DELETE" method="POST">
+            <input class="btn btn-sm btn-danger"
+            type="submit"
+            name="delete"
+            value="Delete Snack">
+        </form>
+      </span>
       </p>
     </div>
   </div>
