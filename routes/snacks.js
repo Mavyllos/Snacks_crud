@@ -60,11 +60,14 @@ router.delete('/:id', (req, res, next) => {
 });
 
 // The put route is being used to update the selected id
-router.put('/:id', (req, res, next) => {
-  //req is the req, params indicates a search of the url path, query string, and body of the request for the specified parameter
-  var id = req.params.id
-  // body is object containing parameters from the parsed request body
+router.put('/:snackId', (req, res, next) => {
+  //req is the req, params is an object with a key/value pair for the route/id
+  var id = req.params.snackId
+  console.log(req.params);
+  // body is object containing all of parameters from the parsed request body in key value/pairs
   var name = req.body.name
+  console.log(req.body);
+  // sting value for specified k/v pair(s)
   var snack = {
     name: req.body.name,
     review_description: req.body.review_description,
