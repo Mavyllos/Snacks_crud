@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "body-parser": "~1.17.1",
+    "Mavyllos": "https://github.com/Mavyllos/Snacks_crud",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "hbs": "~4.0.1",
